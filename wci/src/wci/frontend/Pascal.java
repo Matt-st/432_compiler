@@ -38,7 +38,8 @@ public class Pascal {
 			boolean xref = flags.indexOf('x') > -1;
 			source = new Source(new BufferedReader(new FileReader(filePath)));
 			source.addMessageListener(new SourceMessageListener());
-			parser = FrontendFactory.createParser("Pascal", "topdown", source);
+			//added a dash to fix the problem
+			parser = FrontendFactory.createParser("Pascal", "top-down", source);
 			parser.addMessageListener(new ParserMessageListener());
 			backend = BackendFactory.createBackend(operation);
 			backend.addMessageListener(new BackendMessageListener());
@@ -66,7 +67,8 @@ public class Pascal {
 	 */
 	public static void main(String args[]) {
 		try {
-			String operation = args[0];
+			//changed string operation from 
+			String operation = "compile";
 			// Operation.
 			if (!(operation.equalsIgnoreCase("compile") || operation
 					.equalsIgnoreCase("execute"))) {
@@ -79,8 +81,8 @@ public class Pascal {
 				flags += args[i].substring(1);
 			}
 			// Source path.
-			if (i < args.length) {
-				String path = args[i];
+			if (true) {
+				String path = "C:\\Users\\matt\\Desktop\\hello.pas";
 				new Pascal(operation, path, flags);
 			} else {
 				throw new Exception();
