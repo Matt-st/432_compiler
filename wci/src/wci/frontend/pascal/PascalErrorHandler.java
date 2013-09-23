@@ -18,6 +18,18 @@ public class PascalErrorHandler {
 	private static int errorCount = 0; // count of syntax errors
 
 	/**
+     * Getter.
+     * @return the syntax error count.
+     */
+    public int getErrorCount()
+    {
+        return errorCount;
+    }
+
+	
+	
+	
+	/**
 	 * Flag an error in the source line.
 	 * 
 	 * @param token
